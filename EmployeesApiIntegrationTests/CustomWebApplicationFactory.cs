@@ -19,7 +19,7 @@ namespace EmployeesApiIntegrationTests
             {
                 var descriptor = services.SingleOrDefault(d =>
                 d.ServiceType == typeof(ISystemTime));
-                if(descriptor != null)
+                if(descriptor != null) 
                 {
                     services.Remove(descriptor);
                 }
