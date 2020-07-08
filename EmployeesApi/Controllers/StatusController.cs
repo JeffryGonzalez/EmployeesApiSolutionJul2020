@@ -32,7 +32,7 @@ namespace EmployeesApi.Controllers
             // 1. TODO: Go check the actual status
             var response = new StatusResponse
             {
-                Status = "I'm Giving it all she's got, Captain!",
+                Status = "I'm Giving it all she's got, Captain! RUNNING IN DOCKER! RAD!",
                 CheckedBy = "Scottie",
                 LastChecked = Time.GetCurrent().AddMinutes(-15),
                 SingletonDemo = Time.GetCreatedAt()
