@@ -4,10 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using EmployeesApi.Domain;
 using EmployeesApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,6 +35,10 @@ namespace EmployeesApi
 
             //var systemTime = new SystemTime(); // configure it or whatever.
             //services.AddSingleton<ISystemTime>(systemTime);
+            services.AddDbContext<EmployeesDataContext>(cfg =>
+            {
+                cfg.UseSqlServer(@"server=.\sqlexpress;database=employees;integrated security=true"); // TODO get rid of this hard coded connection string.
+            });
 
             services.AddTransient<ISystemTime, SystemTime>();
             services.AddSwaggerGen(c =>
