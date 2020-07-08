@@ -17,6 +17,7 @@ namespace EmployeesApi.Domain
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             modelBuilder.Entity<Employee>().Property(p => p.FirstName).HasMaxLength(50);
 
             modelBuilder.Entity<Employee>().HasData(
